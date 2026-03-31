@@ -82,8 +82,9 @@ fun foo():String
     (function_body
       (statements
         (jump_expression
-          (string_literal
-            (string_content)))))))
+          (return_expression
+            (string_literal
+              (string_content))))))))
 
 ================================================================================
 Colon after newline
@@ -144,7 +145,8 @@ fun foo() {
                     (simple_identifier)))
                 (call_suffix
                   (value_arguments))))
-            (jump_expression)))))))
+            (jump_expression
+              (break_expression))))))))
 
 ================================================================================
 get after newline
@@ -211,14 +213,14 @@ else boo()
 (source_file
   (if_expression
     condition: (prefix_expression
-      (simple_identifier))
+      expression: (simple_identifier))
     consequence: (control_structure_body
       (integer_literal))
     alternative: (control_structure_body
       (call_expression
-        (simple_identifier)
-        (call_suffix
-          (value_arguments))))))
+        callee: (simple_identifier)
+        suffix: (call_suffix
+          arguments: (value_arguments))))))
 
 ================================================================================
 Else on the same line
@@ -231,14 +233,14 @@ if (!foo) 3 else boo()
 (source_file
   (if_expression
     condition: (prefix_expression
-      (simple_identifier))
+      expression: (simple_identifier))
     consequence: (control_structure_body
       (integer_literal))
     alternative: (control_structure_body
       (call_expression
-        (simple_identifier)
-        (call_suffix
-          (value_arguments))))))
+        callee: (simple_identifier)
+        suffix: (call_suffix
+          arguments: (value_arguments))))))
 
 ================================================================================
 Line comment before dot in method chain

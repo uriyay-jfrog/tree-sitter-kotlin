@@ -43,7 +43,8 @@ enum class Color(val rgb : Int) {
             (function_body
               (statements
                 (jump_expression
-                  (integer_literal)))))))
+                  (return_expression
+                    (integer_literal))))))))
       (enum_entry
         (simple_identifier)
         (value_arguments
@@ -60,7 +61,8 @@ enum class Color(val rgb : Int) {
             (function_body
               (statements
                 (jump_expression
-                  (integer_literal)))))))
+                  (return_expression
+                    (integer_literal))))))))
       (enum_entry
         (simple_identifier)
         (value_arguments
@@ -77,7 +79,8 @@ enum class Color(val rgb : Int) {
             (function_body
               (statements
                 (jump_expression
-                  (integer_literal)))))))
+                  (return_expression
+                    (integer_literal))))))))
       (function_declaration
         (modifiers
           (inheritance_modifier))

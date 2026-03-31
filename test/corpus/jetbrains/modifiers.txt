@@ -38,149 +38,158 @@ data class Modifiers(val x: Int) {
       (simple_identifier)))
   (import_list
     (import_header
-      (identifier
+      identifier: (identifier
         (simple_identifier)
         (simple_identifier))
-      (wildcard_import)))
+      wildcard: (wildcard_import)))
   (class_declaration
     (modifiers
       (class_modifier))
-    (type_identifier)
-    (primary_constructor
-      (class_parameter
-        (binding_pattern_kind)
-        (simple_identifier)
-        (user_type
-          (type_identifier))))
-    (class_body
-      (function_declaration
-        (modifiers
+    name: (type_identifier)
+    constructor: (primary_constructor
+      parameters: (class_parameter
+        binding_pattern_kind: (binding_pattern_kind)
+        name: (simple_identifier)
+        type: (user_type
+          name: (type_identifier))))
+    body: (class_body
+      members: (function_declaration
+        modifiers: (modifiers
           (function_modifier))
-        (simple_identifier)
-        (function_value_parameters))
-      (property_declaration
+        name: (simple_identifier)
+        parameters: (function_value_parameters))
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)))
-        (integer_literal))
-      (getter
-        (modifiers
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)))
+        initializer: (integer_literal))
+      members: (getter
+        modifiers: (modifiers
           (function_modifier)))
-      (setter
-        (modifiers
+      members: (setter
+        modifiers: (modifiers
           (function_modifier)))
-      (function_declaration
-        (modifiers
+      members: (function_declaration
+        modifiers: (modifiers
           (function_modifier))
-        (simple_identifier)
-        (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (user_type
-              (type_identifier)))
-          (parameter
-            (simple_identifier)
-            (user_type
-              (type_identifier))))
-        (user_type
-          (type_identifier))
-        (function_body
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (user_type
+                name: (type_identifier))))
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (user_type
+                name: (type_identifier)))))
+        type: (user_type
+          name: (type_identifier))
+        body: (function_body
           (statements
             (if_expression
               condition: (equality_expression
-                (simple_identifier)
-                (call_expression
-                  (navigation_expression
-                    (integer_literal)
-                    (navigation_suffix
-                      (simple_identifier)))
-                  (call_suffix
-                    (value_arguments))))
+                lhs: (simple_identifier)
+                rhs: (call_expression
+                  callee: (navigation_expression
+                    receiver: (integer_literal)
+                    suffix: (navigation_suffix
+                      target: (simple_identifier)))
+                  suffix: (call_suffix
+                    arguments: (value_arguments))))
               consequence: (control_structure_body
                 (jump_expression
-                  (simple_identifier))))
+                  (return_expression
+                    expression: (simple_identifier)))))
             (jump_expression
-              (call_expression
-                (simple_identifier)
-                (call_suffix
-                  (value_arguments
-                    (value_argument
-                      (additive_expression
-                        (simple_identifier)
-                        (integer_literal)))
-                    (value_argument
-                      (additive_expression
-                        (simple_identifier)
-                        (simple_identifier))))))))))
-      (function_declaration
-        (modifiers
+              (return_expression
+                expression: (call_expression
+                  callee: (simple_identifier)
+                  suffix: (call_suffix
+                    arguments: (value_arguments
+                      (value_argument
+                        value: (additive_expression
+                          lhs: (simple_identifier)
+                          rhs: (integer_literal)))
+                      (value_argument
+                        value: (additive_expression
+                          lhs: (simple_identifier)
+                          rhs: (simple_identifier)))))))))))
+      members: (function_declaration
+        modifiers: (modifiers
           (function_modifier))
-        (simple_identifier)
-        (function_value_parameters
-          (parameter_modifiers
-            (parameter_modifier))
-          (parameter
-            (simple_identifier)
-            (function_type
-              (function_type_parameters)
-              (user_type
-                (type_identifier))))
-          (parameter_modifiers
-            (parameter_modifier))
-          (parameter
-            (simple_identifier)
-            (function_type
-              (function_type_parameters)
-              (user_type
-                (type_identifier)))))
-        (user_type
-          (type_identifier))
-        (function_body))
-      (function_declaration
-        (modifiers
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            modifiers: (parameter_modifiers
+              (parameter_modifier))
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (function_type
+                parameters: (function_type_parameters)
+                type: (user_type
+                  name: (type_identifier)))))
+          (function_value_parameter
+            modifiers: (parameter_modifiers
+              (parameter_modifier))
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (function_type
+                parameters: (function_type_parameters)
+                type: (user_type
+                  name: (type_identifier))))))
+        type: (user_type
+          name: (type_identifier))
+        body: (function_body))
+      members: (function_declaration
+        modifiers: (modifiers
           (member_modifier)
           (function_modifier))
-        (simple_identifier)
-        (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (nullable_type
-              (user_type
-                (type_identifier))
-              (quest))))
-        (function_body
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (nullable_type
+                type: (user_type
+                  name: (type_identifier))
+                (quest)))))
+        body: (function_body
           (boolean_literal)))
-      (class_declaration
+      members: (class_declaration
         (modifiers
           (class_modifier))
-        (type_identifier))
-      (function_declaration
-        (modifiers
+        name: (type_identifier))
+      members: (function_declaration
+        modifiers: (modifiers
           (function_modifier))
-        (simple_identifier)
-        (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (user_type
-              (type_identifier)
-              (type_arguments
-                (type_projection
-                  (user_type
-                    (type_identifier)))))))
-        (function_body))
-      (function_declaration
-        (simple_identifier)
-        (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (type_modifiers)
-            (function_type
-              receiver: (receiver_type
-                (user_type
-                  (type_identifier)))
-              (function_type_parameters)
-              (user_type
-                (type_identifier)))))
-        (function_body)))))
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (user_type
+                name: (type_identifier)
+                type_arguments: (type_arguments
+                  (type_projection
+                    type: (user_type
+                      name: (type_identifier))))))))
+        body: (function_body))
+      members: (function_declaration
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              modifiers: (type_modifiers)
+              type: (function_type
+                receiver: (receiver_type
+                  type: (user_type
+                    name: (type_identifier)))
+                parameters: (function_type_parameters)
+                type: (user_type
+                  name: (type_identifier))))))
+        body: (function_body)))))

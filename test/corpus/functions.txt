@@ -8,7 +8,8 @@ fun main() {}
 
 (source_file
   (function_declaration
-    (simple_identifier) (function_value_parameters)
+    (simple_identifier)
+    (function_value_parameters)
     (function_body)))
 
 ==================
@@ -21,17 +22,21 @@ fun <T> test() {}
 
 (source_file
   (function_declaration
-    (type_parameters (type_parameter (type_identifier)))
-    (simple_identifier) (function_value_parameters)
+    (type_parameters
+      (type_parameter
+        (type_identifier)))
+    (simple_identifier)
+    (function_value_parameters)
     (function_body)))
 
 ==================
 Generic functions with parameters
-=================
+==================
 
 fun <T: Int> bar(foo: Int): T {}
 
 ---
+
 (source_file
   (function_declaration
     (type_parameters
@@ -41,10 +46,11 @@ fun <T: Int> bar(foo: Int): T {}
           (type_identifier))))
     (simple_identifier)
     (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)))))
     (user_type
       (type_identifier))
     (function_body)))
@@ -63,21 +69,29 @@ fun sum(a: Int, b: Int) = a + b
   (function_declaration
     (simple_identifier)
     (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier)
-          (type_arguments (type_projection (user_type (type_identifier)))))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)
+            (type_arguments
+              (type_projection
+                (user_type
+                  (type_identifier))))))))
     (function_body))
   (function_declaration
     (simple_identifier)
     (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type (type_identifier)))
-      (parameter
-        (simple_identifier)
-        (user_type (type_identifier))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)))))
     (function_body
       (additive_expression
         (simple_identifier)
@@ -95,8 +109,10 @@ fun answerToTheUltimateQuestionOfLifeTheUniverseAndEverything(): Int = 42
   (function_declaration
     (simple_identifier)
     (function_value_parameters)
-    (user_type (type_identifier))
-    (function_body (integer_literal))))
+    (user_type
+      (type_identifier))
+    (function_body
+      (integer_literal))))
 
 ==================
 Functions with return calls
@@ -112,26 +128,28 @@ fun foo(p0: Int): Long {
   (function_declaration
     (simple_identifier)
     (function_value_parameters
-    (parameter
-      (simple_identifier)
-      (user_type
-        (type_identifier))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)))))
     (user_type
       (type_identifier))
     (function_body
       (statements
         (jump_expression
-          (call_expression
-            (navigation_expression
-              (simple_identifier)
-              (navigation_suffix
-                (simple_identifier)))
-            (call_suffix
-              (value_arguments))))))))
+          (return_expression
+            (call_expression
+              (navigation_expression
+                (simple_identifier)
+                (navigation_suffix
+                  (simple_identifier)))
+              (call_suffix
+                (value_arguments)))))))))
 
 =====================
 Override functions
-======================
+=====================
 
 override fun boo() = foo()
 
@@ -151,7 +169,7 @@ override fun boo() = foo()
 
 =====================
 Set function call
-======================
+=====================
 
 fun test() {
     isAccessible = true
@@ -190,12 +208,13 @@ val anon = fun()
 
 (source_file
   (anonymous_function
-  (function_value_parameters))
+    (function_value_parameters))
   (property_declaration
     (binding_pattern_kind)
     (variable_declaration
       (simple_identifier))
-    (anonymous_function (function_value_parameters))))
+    (anonymous_function
+      (function_value_parameters))))
 
 ==================
 Anonymous function with parameters
@@ -208,21 +227,23 @@ val anon = fun(x: Int)
 
 (source_file
   (anonymous_function
-  (function_value_parameters
-    (parameter
-      (simple_identifier)
-      (user_type
-        (type_identifier)))))
+    (function_value_parameters
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier))))))
   (property_declaration
     (binding_pattern_kind)
     (variable_declaration
       (simple_identifier))
     (anonymous_function
-    (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier)))))))
+      (function_value_parameters
+        (function_value_parameter
+          (parameter
+            (simple_identifier)
+            (user_type
+              (type_identifier))))))))
 
 ==================
 Anonymous function with return type
@@ -330,9 +351,10 @@ fun `this is a test function`() = true
 
 (source_file
   (function_declaration
-   (simple_identifier)
-   (function_value_parameters)
-   (function_body (boolean_literal))))
+    (simple_identifier)
+    (function_value_parameters)
+    (function_body
+      (boolean_literal))))
 
 ==================
 Function with null literal as expression body
@@ -344,9 +366,10 @@ fun f() = null
 
 (source_file
   (function_declaration
-   (simple_identifier)
-   (function_value_parameters)
-   (function_body (null_literal))))
+    (simple_identifier)
+    (function_value_parameters)
+    (function_body
+      (null_literal))))
 
 ==================================
 Function block with trailing comma

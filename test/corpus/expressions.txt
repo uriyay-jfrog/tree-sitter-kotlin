@@ -299,7 +299,8 @@ when (this) {
               (type_projection)))))
       (control_structure_body
         (jump_expression
-          (null_literal))))
+          (return_expression
+            (null_literal)))))
     (when_entry
       (when_condition
         (type_test
@@ -309,7 +310,8 @@ when (this) {
               (type_projection)))))
       (control_structure_body
         (jump_expression
-          (null_literal))))))
+          (return_expression
+            (null_literal)))))))
 
 ================================================================================
 When expression with dangling if-else
@@ -918,18 +920,20 @@ fun <T> copyWhenGreater(list: List<T>, threshold: T): List<String>
         (type_identifier)))
     (simple_identifier)
     (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier)
-          (type_arguments
-            (type_projection
-              (user_type
-                (type_identifier))))))
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)
+            (type_arguments
+              (type_projection
+                (user_type
+                  (type_identifier)))))))
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (user_type
+            (type_identifier)))))
     (user_type
       (type_identifier)
       (type_arguments
@@ -1063,7 +1067,8 @@ class Square() : Rectangle(), Polygon {
             (call_expression
               (navigation_expression
                 (this_expression
-                  (type_identifier))
+                  (this_at
+                    (type_identifier)))
                 (navigation_suffix
                   (simple_identifier)))
               (call_suffix
@@ -1071,7 +1076,8 @@ class Square() : Rectangle(), Polygon {
             (call_expression
               (navigation_expression
                 (super_expression
-                  (type_identifier))
+                  (super_at
+                    (type_identifier)))
                 (navigation_suffix
                   (simple_identifier)))
               (call_suffix
@@ -1088,9 +1094,10 @@ class Square() : Rectangle(), Polygon {
             (call_expression
               (navigation_expression
                 (super_expression
-                  (user_type
-                    (type_identifier))
-                  (type_identifier))
+                  (super_at
+                    (user_type
+                      (type_identifier))
+                    (type_identifier)))
                 (navigation_suffix
                   (simple_identifier)))
               (call_suffix
@@ -1116,11 +1123,11 @@ if (cond1) {
     consequence: (control_structure_body
       (statements
         (call_expression
-          (simple_identifier)
-          (call_suffix
-            (value_arguments
+          callee: (simple_identifier)
+          suffix: (call_suffix
+            arguments: (value_arguments
               (value_argument
-                (string_literal
+                value: (string_literal
                   (string_content))))))))
     alternative: (control_structure_body
       (if_expression
@@ -1128,20 +1135,20 @@ if (cond1) {
         consequence: (control_structure_body
           (statements
             (call_expression
-              (simple_identifier)
-              (call_suffix
-                (value_arguments
+              callee: (simple_identifier)
+              suffix: (call_suffix
+                arguments: (value_arguments
                   (value_argument
-                    (string_literal
+                    value: (string_literal
                       (string_content))))))))
         alternative: (control_structure_body
           (statements
             (call_expression
-              (simple_identifier)
-              (call_suffix
-                (value_arguments
+              callee: (simple_identifier)
+              suffix: (call_suffix
+                arguments: (value_arguments
                   (value_argument
-                    (string_literal
+                    value: (string_literal
                       (string_content))))))))))))
 
 ================================================================================
@@ -1398,8 +1405,9 @@ val impl = object : WithDefault() {
           (function_body
             (statements
               (jump_expression
-                (string_literal
-                  (string_content))))))))))
+                (return_expression
+                  (string_literal
+                    (string_content)))))))))))
 
 ================================================================================
 Object literal with user type and class body (no parens)

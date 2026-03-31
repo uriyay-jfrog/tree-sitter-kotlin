@@ -17,57 +17,57 @@ public class TypeModifiers {
   (class_declaration
     (modifiers
       (visibility_modifier))
-    (type_identifier)
-    (class_body
-      (property_declaration
+    name: (type_identifier)
+    body: (class_body
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
-            (function_type_parameters)
-            (user_type
-              (type_identifier))))
-        (postfix_expression
-          (null_literal)))
-      (property_declaration
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier))))
+        initializer: (postfix_expression
+          expression: (null_literal)))
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (type_modifiers)
-          (function_type
-            (function_type_parameters)
-            (user_type
-              (type_identifier))))
-        (postfix_expression
-          (null_literal)))
-      (property_declaration
+        variable: (variable_declaration
+          name: (simple_identifier)
+          modifiers: (type_modifiers)
+          type: (function_type
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier))))
+        initializer: (postfix_expression
+          expression: (null_literal)))
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (type_modifiers)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          modifiers: (type_modifiers)
+          type: (function_type
             receiver: (receiver_type
-              (user_type
-                (type_identifier)))
-            (function_type_parameters)
-            (user_type
-              (type_identifier))))
-        (postfix_expression
-          (null_literal)))
-      (property_declaration
+              type: (user_type
+                name: (type_identifier)))
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier))))
+        initializer: (postfix_expression
+          expression: (null_literal)))
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
             receiver: (receiver_type
-              (parenthesized_type
-                (type_modifiers)
-                (function_type
-                  (function_type_parameters)
-                  (user_type
-                    (type_identifier)))))
-            (function_type_parameters)
-            (user_type
-              (type_identifier))))
-        (postfix_expression
-          (null_literal))))))
+              type: (parenthesized_type
+                modifiers: (type_modifiers)
+                type: (function_type
+                  parameters: (function_type_parameters)
+                  type: (user_type
+                    name: (type_identifier)))))
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier))))
+        initializer: (postfix_expression
+          expression: (null_literal))))))

@@ -74,10 +74,11 @@ class NestedClasses<TOuter> {
           (function_declaration
             (simple_identifier)
             (function_value_parameters
-              (parameter
-                (simple_identifier)
-                (user_type
-                  (type_identifier))))
+              (function_value_parameter
+                (parameter
+                  (simple_identifier)
+                  (user_type
+                    (type_identifier)))))
             (function_body))
           (property_declaration
             (binding_pattern_kind)
@@ -95,10 +96,11 @@ class NestedClasses<TOuter> {
               (function_declaration
                 (simple_identifier)
                 (function_value_parameters
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier)))))
                 (function_body))
               (property_declaration
                 (binding_pattern_kind)
@@ -118,14 +120,16 @@ class NestedClasses<TOuter> {
               (function_declaration
                 (simple_identifier)
                 (function_value_parameters
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier)))
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier)))))
                 (function_body))))))
       (class_declaration
         (modifiers
@@ -141,10 +145,11 @@ class NestedClasses<TOuter> {
           (function_declaration
             (simple_identifier)
             (function_value_parameters
-              (parameter
-                (simple_identifier)
-                (user_type
-                  (type_identifier))))
+              (function_value_parameter
+                (parameter
+                  (simple_identifier)
+                  (user_type
+                    (type_identifier)))))
             (function_body))
           (class_declaration
             (modifiers
@@ -158,24 +163,27 @@ class NestedClasses<TOuter> {
               (function_declaration
                 (simple_identifier)
                 (function_value_parameters
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier)))
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier)
-                      (type_arguments
-                        (type_projection
-                          (user_type
-                            (type_identifier)
-                            (type_arguments
-                              (type_projection
-                                (user_type
-                                  (type_identifier)))))))))
-                  (parameter
-                    (simple_identifier)
-                    (user_type
-                      (type_identifier))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier)
+                        (type_arguments
+                          (type_projection
+                            (user_type
+                              (type_identifier)
+                              (type_arguments
+                                (type_projection
+                                  (user_type
+                                    (type_identifier))))))))))
+                  (function_value_parameter
+                    (parameter
+                      (simple_identifier)
+                      (user_type
+                        (type_identifier)))))
                 (function_body)))))))))

@@ -41,10 +41,11 @@ interface DefaultImplsInInterface {
           (function_modifier))
         (simple_identifier)
         (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (user_type
-              (type_identifier)))))
+          (function_value_parameter
+            (parameter
+              (simple_identifier)
+              (user_type
+                (type_identifier))))))
       (function_declaration
         (simple_identifier)
         (function_value_parameters))

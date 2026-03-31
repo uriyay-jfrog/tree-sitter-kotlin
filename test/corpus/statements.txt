@@ -36,7 +36,8 @@ override fun isDisposed(): Boolean { expectUnreached();  return false }
           (call_suffix
             (value_arguments)))
         (jump_expression
-          (boolean_literal))))))
+          (return_expression
+            (boolean_literal)))))))
 
 ================================================================================
 Getters

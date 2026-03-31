@@ -77,7 +77,8 @@ abstract class ClassMembers(private val p: Int, public open var p2: String, p3: 
         (function_body
           (statements
             (jump_expression
-              (integer_literal)))))
+              (return_expression
+                (integer_literal))))))
       (function_declaration
         (modifiers
           (inheritance_modifier))

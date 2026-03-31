@@ -28,7 +28,8 @@ fun foo() { throw Exception(); }
     (function_body
       (statements
         (jump_expression
-          (call_expression
-            (simple_identifier)
-            (call_suffix
-              (value_arguments))))))))
+          (throw_expression
+            (call_expression
+              (simple_identifier)
+              (call_suffix
+                (value_arguments)))))))))

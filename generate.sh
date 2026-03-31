@@ -1,0 +1,1 @@
+docker run --rm -v $(pwd):/work -w /work node:22 bash -c "npm config set strict-ssl false && npm install && npm run generate"

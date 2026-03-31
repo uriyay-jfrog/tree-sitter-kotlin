@@ -302,20 +302,20 @@ typealias T<E, Q,> = Foo<E, Q,>
 (source_file
   (type_alias
     (type_identifier)
-      (type_parameters
-        (type_parameter
-          (type_identifier))
-        (type_parameter
-          (type_identifier)))
-      (user_type
-        (type_identifier)
-          (type_arguments
-            (type_projection
-              (user_type
-                (type_identifier)))
-            (type_projection
-              (user_type
-                (type_identifier)))))))
+    (type_parameters
+      (type_parameter
+        (type_identifier))
+      (type_parameter
+        (type_identifier)))
+    (user_type
+      (type_identifier)
+      (type_arguments
+        (type_projection
+          (user_type
+            (type_identifier)))
+        (type_projection
+          (user_type
+            (type_identifier)))))))
 
 ================================================================================
 Ampersand type
@@ -345,11 +345,11 @@ a as @Foo T & F
 (source_file
   (as_expression
     (simple_identifier)
-    (type_modifiers
-      (annotation
-        (user_type
-          (type_identifier))))
     (not_nullable_type
+      (type_modifiers
+        (annotation
+          (user_type
+            (type_identifier))))
       (user_type
         (type_identifier))
       (user_type
@@ -439,16 +439,17 @@ fun foo(fn: Foo.Bar.() -> Unit) {}
   (function_declaration
     (simple_identifier)
     (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (function_type
-          (receiver_type
+      (function_value_parameter
+        (parameter
+          (simple_identifier)
+          (function_type
+            (receiver_type
+              (user_type
+                (type_identifier)
+                (type_identifier)))
+            (function_type_parameters)
             (user_type
-              (type_identifier)
-              (type_identifier)))
-          (function_type_parameters)
-          (user_type
-            (type_identifier)))))
+              (type_identifier))))))
     (function_body)))
 
 ================================================================================

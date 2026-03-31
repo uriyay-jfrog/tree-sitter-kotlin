@@ -39,333 +39,334 @@ abstract class Types {
   (class_declaration
     (modifiers
       (inheritance_modifier))
-    (type_identifier)
-    (class_body
-      (property_declaration
+    name: (type_identifier)
+    body: (class_body
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (nullable_type
-            (user_type
-              (type_identifier))
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (nullable_type
+            type: (user_type
+              name: (type_identifier))
             (quest)))
-        (null_literal))
-      (property_declaration
-        (modifiers
+        initializer: (null_literal))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (user_type
-                  (type_identifier)))))))
-      (property_declaration
-        (modifiers
+                type: (user_type
+                  name: (type_identifier)))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier)))))))
-      (property_declaration
-        (modifiers
+                type: (user_type
+                  name: (type_identifier)))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (nullable_type
-            (user_type
-              (type_identifier)
-              (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (nullable_type
+            type: (user_type
+              name: (type_identifier)
+              type_arguments: (type_arguments
                 (type_projection
-                  (nullable_type
-                    (user_type
-                      (type_identifier))
+                  type: (nullable_type
+                    type: (user_type
+                      name: (type_identifier))
                     (quest)))
                 (type_projection
-                  (nullable_type
-                    (user_type
-                      (type_identifier))
+                  type: (nullable_type
+                    type: (user_type
+                      name: (type_identifier))
                     (quest)))))
             (quest))))
-      (property_declaration
-        (modifiers
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (type_projection_modifiers
+                modifiers: (type_projection_modifiers
                   (variance_modifier))
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (type_projection_modifiers
+                modifiers: (type_projection_modifiers
                   (variance_modifier))
-                (user_type
-                  (type_identifier)))))))
-      (property_declaration
+                type: (user_type
+                  name: (type_identifier)))))))
+      members: (property_declaration
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
-            (function_type_parameters)
-            (user_type
-              (type_identifier))))
-        (lambda_literal))
-      (property_declaration
-        (modifiers
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier))))
+        initializer: (lambda_literal))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
-            (function_type_parameters
-              (user_type
-                (type_identifier))
-              (user_type
-                (type_identifier)))
-            (user_type
-              (type_identifier)
-              (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
+            parameters: (function_type_parameters
+              type: (user_type
+                name: (type_identifier))
+              type: (user_type
+                name: (type_identifier)))
+            type: (user_type
+              name: (type_identifier)
+              type_arguments: (type_arguments
                 (type_projection
-                  (user_type
-                    (type_identifier))))))))
-      (property_declaration
-        (modifiers
+                  type: (user_type
+                    name: (type_identifier))))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
             receiver: (receiver_type
-              (user_type
-                (type_identifier)))
-            (function_type_parameters)
-            (user_type
-              (type_identifier)
-              (type_arguments
+              type: (user_type
+                name: (type_identifier)))
+            parameters: (function_type_parameters)
+            type: (user_type
+              name: (type_identifier)
+              type_arguments: (type_arguments
                 (type_projection
-                  (user_type
-                    (type_identifier))))))))
-      (property_declaration
-        (modifiers
+                  type: (user_type
+                    name: (type_identifier))))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
             receiver: (receiver_type
-              (user_type
-                (type_identifier)))
-            (function_type_parameters
-              (user_type
-                (type_identifier))
-              (user_type
-                (type_identifier)))
-            (user_type
-              (type_identifier)
-              (type_arguments
+              type: (user_type
+                name: (type_identifier)))
+            parameters: (function_type_parameters
+              type: (user_type
+                name: (type_identifier))
+              type: (user_type
+                name: (type_identifier)))
+            type: (user_type
+              name: (type_identifier)
+              type_arguments: (type_arguments
                 (type_projection
-                  (user_type
-                    (type_identifier))))))))
-      (property_declaration
-        (modifiers
+                  type: (user_type
+                    name: (type_identifier))))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
             receiver: (receiver_type
-              (user_type
-                (type_identifier)))
-            (function_type_parameters
-              (nullable_type
-                (user_type
-                  (type_identifier))
+              type: (user_type
+                name: (type_identifier)))
+            parameters: (function_type_parameters
+              type: (nullable_type
+                type: (user_type
+                  name: (type_identifier))
                 (quest))
-              (nullable_type
-                (user_type
-                  (type_identifier))
+              type: (nullable_type
+                type: (user_type
+                  name: (type_identifier))
                 (quest)))
-            (nullable_type
-              (user_type
-                (type_identifier)
-                (type_arguments
+            type: (nullable_type
+              type: (user_type
+                name: (type_identifier)
+                type_arguments: (type_arguments
                   (type_projection
-                    (nullable_type
-                      (user_type
-                        (type_identifier))
+                    type: (nullable_type
+                      type: (user_type
+                        name: (type_identifier))
                       (quest)))))
               (quest)))))
-      (property_declaration
-        (modifiers
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (function_type
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (function_type
             receiver: (receiver_type
-              (user_type
-                (type_identifier)))
-            (function_type_parameters
-              (function_type
-                (function_type_parameters
-                  (user_type
-                    (type_identifier)))
-                (user_type
-                  (type_identifier)))
-              (nullable_type
-                (user_type
-                  (type_identifier))
+              type: (user_type
+                name: (type_identifier)))
+            parameters: (function_type_parameters
+              type: (function_type
+                parameters: (function_type_parameters
+                  type: (user_type
+                    name: (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
+              type: (nullable_type
+                type: (user_type
+                  name: (type_identifier))
                 (quest)))
-            (nullable_type
-              (user_type
-                (type_identifier)
-                (type_arguments
+            type: (nullable_type
+              type: (user_type
+                name: (type_identifier)
+                type_arguments: (type_arguments
                   (type_projection
-                    (nullable_type
-                      (user_type
-                        (type_identifier))
+                    type: (nullable_type
+                      type: (user_type
+                        name: (type_identifier))
                       (quest)))))
               (quest)))))
-      (function_declaration
-        (modifiers
+      members: (function_declaration
+        modifiers: (modifiers
           (visibility_modifier))
-        (type_parameters
+        type_parameters: (type_parameters
           (type_parameter
-            (type_identifier))
+            name: (type_identifier))
           (type_parameter
-            (type_identifier))
+            name: (type_identifier))
           (type_parameter
-            (type_identifier))
+            name: (type_identifier))
           (type_parameter
-            (type_identifier)))
+            name: (type_identifier)))
         receiver: (receiver_type
-          (user_type
-            (type_identifier)
-            (type_arguments
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier))))))
-        (simple_identifier)
-        (function_value_parameters)
-        (function_body))
-      (property_declaration
-        (modifiers
+                type: (user_type
+                  name: (type_identifier))))))
+        name: (simple_identifier)
+        parameters: (function_value_parameters)
+        body: (function_body))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection)))))
-      (property_declaration
-        (modifiers
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection)
               (type_projection)))))
-      (property_declaration
-        (modifiers
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (type_modifiers
+        variable: (variable_declaration
+          name: (simple_identifier)
+          modifiers: (type_modifiers
             (annotation
               (user_type
-                (type_identifier))))
-          (user_type
-            (type_identifier)
-            (type_arguments
+                name: (type_identifier))))
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier)))
+                type: (user_type
+                  name: (type_identifier)))
               (type_projection
-                (user_type
-                  (type_identifier)))))))
-      (property_declaration
-        (modifiers
+                type: (user_type
+                  name: (type_identifier)))))))
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection
-                (type_modifiers
+                modifiers: (type_modifiers
                   (annotation
                     (user_type
-                      (type_identifier))))
-                (user_type
-                  (type_identifier)
-                  (type_arguments
+                      name: (type_identifier))))
+                type: (user_type
+                  name: (type_identifier)
+                  type_arguments: (type_arguments
                     (type_projection)
                     (type_projection))))))))
-      (property_declaration
-        (modifiers
+      members: (property_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
         (binding_pattern_kind)
-        (variable_declaration
-          (simple_identifier)
-          (user_type
-            (type_identifier)
-            (type_arguments
+        variable: (variable_declaration
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)
+            type_arguments: (type_arguments
               (type_projection)
               (type_projection
-                (user_type
-                  (type_identifier)))))))
-      (function_declaration
-        (modifiers
+                type: (user_type
+                  name: (type_identifier)))))))
+      members: (function_declaration
+        modifiers: (modifiers
           (inheritance_modifier))
-        (simple_identifier)
-        (function_value_parameters
-          (parameter
-            (simple_identifier)
-            (function_type
-              (function_type_parameters
-                (parameter
-                  (simple_identifier)
-                  (user_type
-                    (type_identifier)))
-                (parameter
-                  (simple_identifier)
-                  (nullable_type
-                    (user_type
-                      (type_identifier))
-                    (quest))))
-              (user_type
-                (type_identifier)))))))))
+        name: (simple_identifier)
+        parameters: (function_value_parameters
+          (function_value_parameter
+            parameter: (parameter
+              name: (simple_identifier)
+              type: (function_type
+                parameters: (function_type_parameters
+                  (parameter
+                    name: (simple_identifier)
+                    type: (user_type
+                      name: (type_identifier)))
+                  (parameter
+                    name: (simple_identifier)
+                    type: (nullable_type
+                      type: (user_type
+                        name: (type_identifier))
+                      (quest))))
+                type: (user_type
+                  name: (type_identifier))))))))))

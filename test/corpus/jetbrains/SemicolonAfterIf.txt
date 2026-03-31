@@ -8,36 +8,39 @@ fun foo(a: Int): Int { var x = a; var y = x++; if (y+1 != x) return -1; return x
 
 (source_file
   (function_declaration
-    (simple_identifier)
-    (function_value_parameters
-      (parameter
-        (simple_identifier)
-        (user_type
-          (type_identifier))))
-    (user_type
-      (type_identifier))
-    (function_body
+    name: (simple_identifier)
+    parameters: (function_value_parameters
+      (function_value_parameter
+        parameter: (parameter
+          name: (simple_identifier)
+          type: (user_type
+            name: (type_identifier)))))
+    type: (user_type
+      name: (type_identifier))
+    body: (function_body
       (statements
         (property_declaration
           (binding_pattern_kind)
-          (variable_declaration
-            (simple_identifier))
-          (simple_identifier))
+          variable: (variable_declaration
+            name: (simple_identifier))
+          initializer: (simple_identifier))
         (property_declaration
           (binding_pattern_kind)
-          (variable_declaration
-            (simple_identifier))
-          (postfix_expression
-            (simple_identifier)))
+          variable: (variable_declaration
+            name: (simple_identifier))
+          initializer: (postfix_expression
+            expression: (simple_identifier)))
         (if_expression
           condition: (equality_expression
-            (additive_expression
-              (simple_identifier)
-              (integer_literal))
-            (simple_identifier))
+            lhs: (additive_expression
+              lhs: (simple_identifier)
+              rhs: (integer_literal))
+            rhs: (simple_identifier))
           consequence: (control_structure_body
             (jump_expression
-              (prefix_expression
-                (integer_literal)))))
+              (return_expression
+                expression: (prefix_expression
+                  expression: (integer_literal))))))
         (jump_expression
-          (simple_identifier))))))
+          (return_expression
+            expression: (simple_identifier)))))))
